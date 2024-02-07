@@ -10,7 +10,8 @@ a = 33
 b = 200
 
 if b > a:
-print("b is greater than a")  # error. if statement need identation
+  print("b is greater than a")
+#print("b is greater than a")  # error. if statement need identation
 
 
 # Example 1.3 : Elif statement
