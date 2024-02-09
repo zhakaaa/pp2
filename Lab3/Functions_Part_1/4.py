@@ -11,7 +11,7 @@ for i in range(size):
 def prime_numbers(lst) :
     for i in lst :
         a = True
-        if i == 1 :
+        if i == 1 or i == 0:
             continue
         else :
             for x in range(2,i) :
