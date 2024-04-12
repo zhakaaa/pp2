@@ -46,10 +46,10 @@ def draw_menu(size,color):
     pygame.draw.circle(screen, 'dark gray', (650,35), 30, 3) 
 
 
-    rect_rect = pygame.draw.rect(screen, 'white', (400,10,50,50))
-    pygame.draw.rect(screen, 'dark gray', (400,10,50,50), 3)
-    circle_rect = pygame.draw.circle(screen, 'white', (480,35), 25)
-    pygame.draw.circle(screen, 'dark gray', (480,35), 25, 3)
+    rect_rect = pygame.draw.rect(screen, 'white', (400,10,60,50))
+    pygame.draw.rect(screen, 'dark gray', (400,10,60,50), 3)
+    circle_rect = pygame.draw.circle(screen, 'white', (490,35), 25)
+    pygame.draw.circle(screen, 'dark gray', (490,35), 25, 3)
     shapes = [rect_rect, circle_rect]
 
 
@@ -77,7 +77,7 @@ def draw_painting_circle(paints) :
 # функция отвечает за рисовку прямоугольника
 def draw_painting_rect(paints):
     for i in range(len(paints)):
-        pygame.draw.rect(screen, paints[i][0], (paints[i][1][0], paints[i][1][1], paints[i][2], paints[i][2]))
+        pygame.draw.rect(screen, paints[i][0], (paints[i][1][0], paints[i][1][1], paints[i][2] * 2, paints[i][2]))
 
 
 run = True
