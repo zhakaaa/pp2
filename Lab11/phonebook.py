@@ -27,7 +27,7 @@ cur.execute(""" INSERT INTO phonebook (id, name, surname, phonenumber) VALUES
 (10,'Akhat', 'Akho', 87017481646);
 """)
 
-
+id = 11
 def add_data():
     # add new user
     cur.execute('''INSERT INTO phonebook (id,name,surname,phonenumber) VALUES
@@ -49,21 +49,22 @@ def delete_data():
         print(row)
 
 def add_users():
-    id = 12
+    global id
     user = input("Enter name: ")
     surname = input("Enter surname: ")
     phonenumber = input("Enter phonenumber: ")
 
-    data = (id,user,surname,phonenumber)
+    #data = (id,user,surname,phonenumber)
 
     if(len(phonenumber) == 11) :
-        cur.execute('''INSERT INTO phonebook (id, name, surname, phonenumber) VALUES data ''')
+        cur.execute('''INSERT INTO phonebook (id, name, surname, phonenumber) VALUES (%s, %s, %s, %s)''', (id,user,surname,phonenumber))
+        id+=1
     else:
         print("Wrong phonenumber!")
 
 
+add_users()
+
 conn.commit()
 cur.close()
 conn.close()
-
-add_users()
